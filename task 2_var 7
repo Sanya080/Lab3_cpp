@@ -1,0 +1,37 @@
+// Лабораторна робота №3. Завдання 2, варіант 7 
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int age;
+
+    cout << "Введіть вік дитини (повних років): ";
+    cin >> age;
+
+    switch (age)
+    {
+        case 1:
+        case 2:
+            cout << "Група: ясельна" << endl;
+            break;
+        case 3:
+            cout << "Група: молодша" << endl;
+            break;
+        case 4:
+            cout << "Група: середня" << endl;
+            break;
+        case 5:
+        case 6:
+            cout << "Група: старша" << endl;
+            break;
+        default:
+            if (age < 1)
+                cout << "Ця дитина ще зовсім мала для садка." << endl;
+            else
+                cout << "Ця дитина вже доросла для садка." << endl;
+    }
+
+    return 0;
+}
