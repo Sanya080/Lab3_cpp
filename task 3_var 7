@@ -1,0 +1,55 @@
+// Лабораторна робота №3. Завдання 3, варіант 7
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    double a, b, c, x;
+    double F;
+    bool ok = true;
+
+    cout << "=== Обчислення функції F (варiант 7) ===" << endl;
+    cout << "        | -a*x^2 - b , де x < 5 та c != 0" << endl;
+    cout << "   F =  | (x - a)/x  , де x > 5 та c = 0" << endl;
+    cout << "        | -x/c       , в iнших випадках" << endl << endl;
+
+    cout << "Введiть a: "; cin >> a;
+    cout << "Введiть b: "; cin >> b;
+    cout << "Введiть c: "; cin >> c;
+    cout << "Введiть x: "; cin >> x;
+
+    cout << endl << "Початковi значення: a = " << a << ", b = " << b
+         << ", c = " << c << ", x = " << x << endl;
+
+    if (x < 5 && c != 0)
+    {
+        cout << "Виконано умову: x < 5 та c != 0  =>  F = -a*x^2 - b" << endl;
+        F = -a * x * x - b;
+    }
+    else if (x > 5 && c == 0)
+    {
+        cout << "Виконано умову: x > 5 та c = 0  =>  F = (x - a)/x" << endl;
+        F = (x - a) / x;
+    }
+    else
+    {
+        cout << "Виконано умову: iншi випадки  =>  F = -x/c" << endl;
+        if (c == 0)
+        {
+            ok = false;
+            F = 0;
+        }
+        else
+            F = -x / c;
+    }
+
+    if (ok)
+        cout << "Кiнцеве значення: F = " << fixed << setprecision(4) << F << endl;
+    else
+        cout << "Помилка: c = 0, дiлення на нуль, F не визначена!" << endl;
+
+    return 0;
+}
